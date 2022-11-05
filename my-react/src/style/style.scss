@@ -1,0 +1,68 @@
+$widthTable: 500px;
+$percentageHeadTable: 40%;
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    margin: 5px 0;
+}
+
+#createPerson {
+    margin: 10px 0 20px;
+}
+
+nav ul li {
+    padding: 2px;
+    background-color: transparent;
+    border: 1px solid rgb(20, 104, 160);
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+nav ul li:hover {
+    background-color: rgb(239, 247, 250);
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.strong span {
+    font-weight: 400;
+}
+
+input {
+    max-width: 350px;
+}
+
+.verticalTable {
+    width: $widthTable;
+    margin: 40px 0 0 0;
+
+    thead {
+        float: left;
+        width: $percentageHeadTable;
+    }
+
+    tbody {
+        float: right;
+        width: calc(100% - $percentageHeadTable);
+    }
+
+    td, th {
+        border: 1px solid black;
+        margin-bottom: 1px;
+
+        span {
+            margin-left: 10px;
+        }
+    }
+
+    tr, td, th{
+        display: block;
+        width: 100%;
+    }
+}
