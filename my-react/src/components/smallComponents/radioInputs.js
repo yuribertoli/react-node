@@ -1,13 +1,13 @@
 import '../../style/radioInput.scss';
 
-function RadioInput(props) {
+function RadioInput({handleChange}) {
     return (
         <div>
             <label>Il prodotto è disponibile?:</label>
             <div className='radioGroup'>
                 <div className="custom-radios">
                     <div>
-                        <input type="radio" id="color-1" name="disponibile" value={1} defaultChecked={true} />
+                        <input type="radio" id="color-1" onClick={handleChange} name="disponibile" value={1} defaultChecked={true} />
                         <label htmlFor="color-1">
                             <span>
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
@@ -16,7 +16,7 @@ function RadioInput(props) {
                     </div>
 
                     <div>
-                        <input type="radio" id="color-4" name="disponibile" value={0} />
+                        <input type="radio" id="color-4" onClick={handleChange} name="disponibile" value={0} />
                         <label htmlFor="color-4">
                             <span>
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />

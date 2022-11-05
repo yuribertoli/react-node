@@ -182,3 +182,9 @@ Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 5/11/2022, Ora: 22:51:49
 Metodo: GET 		 Url: /ferramenta/catalogo/788ZDZ 		 Data: 5/11/2022, Ora: 22:51:51
 Metodo: DELETE 		 Url: /ferramenta/catalogo/788ZDZ 		 Data: 5/11/2022, Ora: 22:51:55
 Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 5/11/2022, Ora: 22:51:55
+Metodo: POST 		 Url: /ferramenta/catalogo 		 Data: 5/11/2022, Ora: 22:58:15
+Metodo: GET 		 Url: /ferramenta/catalogo/C9E2ZD 		 Data: 5/11/2022, Ora: 22:58:16
+Metodo: GET 		 Url: /ferramenta/catalogo/C9E2ZD 		 Data: 5/11/2022, Ora: 22:58:20
+Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 5/11/2022, Ora: 22:58:25
+Metodo: POST 		 Url: /ferramenta/catalogo 		 Data: 5/11/2022, Ora: 22:58:37
+Metodo: GET 		 Url: /ferramenta/catalogo/CUZZ 		 Data: 5/11/2022, Ora: 22:58:38
