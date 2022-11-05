@@ -26,13 +26,13 @@ const Form = () => {
         },
         body: JSON.stringify(prodotto)
       })
-      .then(risultato => {
-        if (risultato.ok) {
-          navigate(`/ferramenta/catalogo/${prodotto.codice}`)
-        } else {
-          alert(risultato.status + risultato.statusText);
-        }
-      })
+        .then(risultato => {
+          if (risultato.ok) {
+            navigate(`/ferramenta/catalogo/${prodotto.codice}`)
+          } else {
+            alert(risultato.status + risultato.statusText);
+          }
+        })
 
       alert(`${prodotto.nome} aggiunto/a correttamente`);
     }
@@ -70,6 +70,15 @@ const Form = () => {
           type="text"
           name="codice"
           value={prodotto.codice || ""}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label>Inserisci l'URL dell'immagine:
+        <input
+          type="text"
+          name="urlImg"
+          value={prodotto.urlImg || ""}
           onChange={handleChange}
         />
       </label>

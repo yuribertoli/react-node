@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Elenco from "./pages/Elenco";
 import Details from "./pages/Details";
-import UserDetails from "./components/UserDetails";
+import ProductDetails from "./components/ProductDetails";
 import Create from "./pages/Create";
 import Form from "./components/Form";
 import Modifica from "./pages/Modifica";
@@ -27,7 +27,7 @@ export default function App() {
           <Route index element={<Elenco />} ></Route>
 
           <Route path='/ferramenta/catalogo' element={<Details />}>
-            <Route path=":codice" element={<UserDetails />} />
+            <Route path=":codice" element={<ProductDetails />} />
           </Route>  
 
           <Route path='/ferramenta/catalogo/creazione' element={<Create/>}>

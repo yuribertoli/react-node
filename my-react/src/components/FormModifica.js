@@ -77,6 +77,15 @@ function FormModifica() {
                     />
                 </label>
 
+                <label>Modifica l'immagine:
+                    <input
+                        type="text"f
+                        name="urlImg"
+                        defaultValue={prodotto.urlImg}
+                        onChange={handleChange}
+                    />
+                </label>
+
                 <input className="button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />
 
                 <ul className="no-bullet grid-x margin-top-1">

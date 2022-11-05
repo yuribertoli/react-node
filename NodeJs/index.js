@@ -1,7 +1,8 @@
-//npm init
+//npm init -y
 //npm install mongodb-legacy
 //npm install express
 //npm install cors
+//npm i nodemon -D (aggiungo poi "start": "nodemon index.js" nello script del package.json e lancio con npm start) 
 
 const { ObjectId } = require('mongodb-legacy');
 var connString = 'mongodb://127.0.0.1:27017';
@@ -75,7 +76,8 @@ app.post('/ferramenta/catalogo', (req, res) => {
     var newProduct = {
         nome: req.body.nome,
         prezzo: req.body.prezzo,
-        codice: req.body.codice
+        codice: req.body.codice,
+        urlImg: req.body.urlImg
     };
 
     prodotti.findOne({ codice: req.body.codice })
@@ -104,7 +106,8 @@ app.put('/ferramenta/catalogo/:codice', (req, res) => {
                     $set: {
                         nome: req.body.nome,
                         prezzo: req.body.prezzo,
-                        codice: req.body.codice
+                        codice: req.body.codice,
+                        urlImg: req.body.urlImg
                     }
                 });
             res.json(result);

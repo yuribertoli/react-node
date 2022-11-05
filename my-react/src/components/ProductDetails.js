@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from "react-router-dom";
 
-const UserDetails = () => {
+const ProductDetails = () => {
 
     const [prodotto, setProdotto] = useState({});
     const { codice } = useParams();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8080/Ferramenta/Catalogo/${codice}`)
+        fetch(`http://127.0.0.1:8080/ferramenta/catalogo/${codice}`)
             .then(response => response.json())
             .then(json => setProdotto(json))
     }, [])
@@ -21,6 +21,7 @@ const UserDetails = () => {
                             <th><span>Nome</span></th>
                             <th><span>Prezzo (€)</span></th>
                             <th><span>Codice Prodotto</span></th>
+                            <th><span>Immagine</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,7 @@ const UserDetails = () => {
                             <td><span>{prodotto.nome}</span></td>
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
+                            <td><img src={prodotto.urlImg} alt={prodotto.nome} /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -56,4 +58,4 @@ const UserDetails = () => {
     );
 };
 
-export default UserDetails;
+export default ProductDetails;
