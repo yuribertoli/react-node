@@ -21,7 +21,7 @@ const ProductDetails = () => {
                             <th><span>Nome</span></th>
                             <th><span>Prezzo (€)</span></th>
                             <th><span>Codice Prodotto</span></th>
-                            <th><span>Immagine</span></th>
+                            <th><span>Disponibilità</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,10 +29,11 @@ const ProductDetails = () => {
                             <td><span>{prodotto.nome}</span></td>
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
-                            <td><img src={prodotto.urlImg} alt={prodotto.nome} /></td>
+                            <td><span>{prodotto.disponibile}</span></td>
                         </tr>
                     </tbody>
                 </table>
+                <div className='imgTable'><img src={prodotto.urlImg} alt={prodotto.nome} /></div>
             </div>
 
             <ul className="no-bullet grid-x">

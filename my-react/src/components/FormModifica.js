@@ -55,7 +55,7 @@ function FormModifica() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form id='formModifica' onSubmit={handleSubmit}>
 
                 <p>Codice prodotto: {prodotto.codice}</p>
 
@@ -70,7 +70,7 @@ function FormModifica() {
 
                 <label>Modifica il prezzo:
                     <input
-                        type="text"
+                        type="number"
                         name="prezzo"
                         defaultValue={prodotto.prezzo}
                         onChange={handleChange}
@@ -79,7 +79,7 @@ function FormModifica() {
 
                 <label>Modifica l'immagine:
                     <input
-                        type="text"f
+                        type="url"
                         name="urlImg"
                         defaultValue={prodotto.urlImg}
                         onChange={handleChange}
@@ -104,6 +104,8 @@ function FormModifica() {
                         </Link>
                     </li>
                 </ul>
+
+                <div className='imgTable'><img src={prodotto.urlImg} alt={prodotto.nome} /></div>
 
             </form>
         </div>

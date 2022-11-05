@@ -41,6 +41,7 @@ input {
 .verticalTable {
     width: $widthTable;
     margin: 40px 0 0 0;
+    position: relative;
 
     thead {
         float: left;
@@ -64,5 +65,24 @@ input {
     tr, td, th{
         display: block;
         width: 100%;
+    }
+}
+
+#formModifica{
+    position: relative;
+}
+
+.imgTable{
+    position: absolute;
+    top: 0;
+    left: $widthTable + 50px;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: inset 0 0 5px black;
+
+    img{
+        max-width: 400px;
+        height: auto;
+        max-height: 400px;
     }
 }

@@ -6,7 +6,7 @@ function Elenco() {
     const [prodotti, setProdotti] = useState([]);
 
     useEffect(()=>{
-        fetch('http://127.0.0.1:8080/ferramenta/catalogo')
+        fetch('http://127.0.0.1:8080/ferramenta/catalogo-min')
         .then(response => response.json())
         .then(json => setProdotti(json))
     }, [])
@@ -23,9 +23,9 @@ function Elenco() {
                         <th>Nome</th>
                         <th>Prezzo (€)</th>
                         <th>Codice Prodotto</th>
-                        <th>Dettaglio</th>
+                        <th>Dettagli</th>
                         <th>Modifica</th>
-                        <th>Eliminazione</th>
+                        <th>Elimina</th>
                     </tr>
                 </thead>
 

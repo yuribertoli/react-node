@@ -46,10 +46,10 @@ app.get('/ferramenta/catalogo-min', (req, res) => {
             res.status(404).send("Catalogo non presente");
         } else {
             const nuoviProdotti = result.map((prodotto) => {
-                const { nome, prezzo } = prodotto;
-                return { nome, prezzo };
+                const { nome, prezzo, codice, disponibile } = prodotto;
+                return { nome, prezzo, codice, disponibile };
             })
-            res.json({success: true, data: nuoviProdotti});
+            res.json(nuoviProdotti);
         }
     }).catch(error => {
         res.status(500).send(error.message);
@@ -77,7 +77,8 @@ app.post('/ferramenta/catalogo', (req, res) => {
         nome: req.body.nome,
         prezzo: req.body.prezzo,
         codice: req.body.codice,
-        urlImg: req.body.urlImg
+        urlImg: req.body.urlImg,
+        disponibile: req.body.disponibile
     };
 
     prodotti.findOne({ codice: req.body.codice })
@@ -107,7 +108,8 @@ app.put('/ferramenta/catalogo/:codice', (req, res) => {
                         nome: req.body.nome,
                         prezzo: req.body.prezzo,
                         codice: req.body.codice,
-                        urlImg: req.body.urlImg
+                        urlImg: req.body.urlImg,
+                        disponibile: req.body.disponibile
                     }
                 });
             res.json(result);
