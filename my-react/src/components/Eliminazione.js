@@ -12,6 +12,7 @@ function Eliminazione() {
         fetch(`http://127.0.0.1:8080/ferramenta/catalogo/${codice}`)
             .then(response => response.json())
             .then(json => setProdotto(json))
+            // eslint-disable-next-line
     }, [])
 
     const handleDelete = () => {
@@ -62,7 +63,7 @@ function Eliminazione() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span>{prodotto.nome}</span></td>
+                            <td className="firstTD"><span>{prodotto.nome}</span></td>
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
                         </tr>
@@ -70,19 +71,19 @@ function Eliminazione() {
                 </table>
             </div>
 
-            <button className="button alert radius" onClick={handleDelete}>&#9760; Elimina {prodotto.nome}</button>
+            <button className="linkTag button alert radius" onClick={handleDelete}>&#9760; Elimina {prodotto.nome}</button>
 
             <ul className="no-bullet grid-x margin-top-1">
                 <li>
                     <Link
-                        className="button radius margin-right-1"
+                        className="linkTag button radius margin-right-1"
                         to={`/ferramenta/catalogo/${prodotto.codice}`}>
                         &#10047; Dettagli
                     </Link>
                 </li>
                 <li>
                     <Link
-                        className="button radius warning"
+                        className="linkTag button radius warning"
                         to={`/ferramenta/catalogo/modifica/${prodotto.codice}`}>
                         &#9763; Modifica
                     </Link>

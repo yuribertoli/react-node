@@ -1,11 +1,11 @@
 $widthTable: 500px;
 $percentageHeadTable: 40%;
 
-body{
+body {
     overflow-y: scroll;
 }
 
-footer{
+footer {
     height: 100px;
 }
 
@@ -14,28 +14,29 @@ footer{
     margin: auto;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
-.d-block{
+.d-block {
     display: block;
 }
 
-#titleElenco{
+#titleElenco {
     display: flex;
     justify-content: space-between;
 
     #createPerson {
-        margin: 10px 0 20px;
+        position: relative;
+        top: 18px;
         height: 41px;
     }
 
-    label{
+    label {
         text-align: end;
     }
-    
-    input{
+
+    input {
         min-width: 280px;
         text-align: end;
         text-transform: uppercase;
@@ -85,7 +86,8 @@ input {
         width: calc(100% - $percentageHeadTable);
     }
 
-    td, th {
+    td,
+    th {
         border: 1px solid black;
         margin-bottom: 1px;
 
@@ -94,21 +96,24 @@ input {
         }
     }
 
-    tr, td, th{
+    tr,
+    td,
+    th {
         display: block;
         width: 100%;
     }
 }
 
-#formModifica,#formElimina{
+#formModifica,
+#formElimina {
     position: relative;
 }
 
-#codiceFormMod{
+#codiceFormMod {
     margin-bottom: 15px;
 }
 
-.imgTable{
+.imgTable {
     position: absolute;
     top: 0;
     left: $widthTable + 50px;
@@ -120,7 +125,7 @@ input {
     justify-content: center;
     align-items: center;
 
-    img{
+    img {
         max-width: 400px;
         height: auto;
         max-height: 400px;
@@ -129,31 +134,45 @@ input {
     }
 }
 
-#imgElenco{
+#imgElenco {
     width: 22px;
     height: 22px;
 }
 
-.trElenco, .trElenco th {
+.trElenco,
+.trElenco th {
     text-align: center;
 
     .firstTD {
         text-align: left;
         width: 190px;
         height: 68px;
-        overflow-x: visible;
-        
+
         span {
             position: relative;
             left: 30px;
+            width: 190px;
         }
     }
 }
 
-thead#theadElenco{
+//queste righe sotto per troncare il testo troppo lungo
+.firstTD span, .linkTag{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 260px;
+    display: block;
+    overflow: hidden
+}
+
+body a.linkTag{
+    max-width: 242px;
+}
+
+thead#theadElenco {
     position: relative;
 
-    tr.trElenco{
+    tr.trElenco {
         position: sticky;
         top: 0;
         left: 0;
@@ -161,6 +180,3 @@ thead#theadElenco{
         z-index: 999;
     }
 }
-
-
-

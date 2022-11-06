@@ -129,19 +129,19 @@ const FormModifica = () => {
                             quantita={quantita}
                 />
 
-                <input className="button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />
+                <input className="linkTag button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />
 
                 <ul className="no-bullet grid-x margin-top-1">
                     <li>
                         <Link
-                            className="button radius margin-right-1"
+                            className="linkTag button radius margin-right-1"
                             to={`/ferramenta/catalogo/${prodotto.codice}`}>
                             &#10047; Dettagli
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className="button radius alert"
+                            className="linkTag button radius alert"
                             to={`/ferramenta/catalogo/eliminazione/${prodotto.codice}`}>
                             &#9760; Elimina
                         </Link>

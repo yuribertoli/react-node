@@ -29,7 +29,7 @@ const ProductDetails = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span>{prodotto.nome}</span></td>
+                            <td className="firstTD"><span>{prodotto.nome}</span></td>
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
                             <td><span>{parseInt(prodotto.disponibile) === 1? "Disponibile" : "Non disponibile"}</span></td>
@@ -46,7 +46,7 @@ const ProductDetails = () => {
 
                 <li>
                     <Link 
-                        className="button radius warning margin-right-1" 
+                        className="linkTag button radius warning margin-right-1" 
                         to={`/ferramenta/catalogo/modifica/${prodotto.codice}`}>
                         &#9763; Modifica {prodotto.nome}
                     </Link>
@@ -54,7 +54,7 @@ const ProductDetails = () => {
 
                 <li>
                     <Link 
-                        className="button radius alert" 
+                        className="linkTag button radius alert" 
                         to={`/ferramenta/catalogo/eliminazione/${prodotto.codice}`}>
                         &#9760; Elimina {prodotto.nome}
                     </Link>
