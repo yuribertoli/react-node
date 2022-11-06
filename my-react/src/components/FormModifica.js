@@ -6,6 +6,8 @@ import ProductImage from './smallComponents/productImage';
 const FormModifica = () => {
 
     const [prodotto, setProdotto] = useState({});
+    const [quantita, setQuantita] = useState(); //setto dinamicamente una classe
+
     const navigate = useNavigate();
     const { codice } = useParams();
 
@@ -14,13 +16,37 @@ const FormModifica = () => {
     useEffect(() => {
         fetch(`http://127.0.0.1:8080/ferramenta/catalogo/${codice}`)
             .then(response => response.json())
-            .then(json => {setProdotto(json)})
+            .then(json => { 
+                setProdotto(json); 
+                if(parseInt(json.disponibile) === 0){
+                    setQuantita('d-none')
+                }
+            })
+        // eslint-disable-next-line
     }, [])
 
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setProdotto(values => ({ ...values, [name]: value }));
+
+        createQuantity(event);
+    }
+
+    //se il prodotto non è disponibile tolgo la possibilità di aggiungere quantità
+    //al contrario se lo rendo disponibile, visualizzo le quantità da impostare
+    const createQuantity = (event) => {
+        if (event.target.name === 'disponibile') {
+            switch (parseInt(event.target.value)) {
+                case 0:
+                    setQuantita('d-none');
+                    break;
+                case 1:
+                    setQuantita('d-block');
+                    break;
+                default:
+            }
+        }
     }
 
     const handleSubmit = (event) => {
@@ -35,13 +61,13 @@ const FormModifica = () => {
                 },
                 body: JSON.stringify(prodotto)
             })
-            .then(risultato => {
-                if (risultato.ok) {
-                    navigate(`/ferramenta/catalogo/${prodotto.codice}`)
-                } else {
-                    alert(risultato.status + risultato.statusText);
-                }
-            })
+                .then(risultato => {
+                    if (risultato.ok) {
+                        navigate(`/ferramenta/catalogo/${prodotto.codice}`)
+                    } else {
+                        alert(risultato.status + risultato.statusText);
+                    }
+                })
 
             alert(`${prodotto.nome} modificato/a correttamente`);
 
@@ -64,7 +90,9 @@ const FormModifica = () => {
         <div>
             <form id='formModifica' onSubmit={handleSubmit}>
 
-                <p>Codice prodotto: {prodotto.codice}</p>
+                <label id='codiceFormMod'>Codice prodotto non modificabile:&nbsp;
+                    <strong>{prodotto.codice}</strong>
+                </label>
 
                 <label>Modifica il nome:
                     <input
@@ -75,10 +103,12 @@ const FormModifica = () => {
                     />
                 </label>
 
-                <label>Modifica il prezzo:
+                <label>Modifica il prezzo (€):
                     <input
                         type="number"
                         name="prezzo"
+                        min="0.00"  //non puo' essere negativo
+                        step="0.05" //aggiunge 5 centesimi per click su freccia aumenta
                         defaultValue={prodotto.prezzo}
                         onChange={handleChange}
                     />
@@ -93,7 +123,11 @@ const FormModifica = () => {
                     />
                 </label>
 
-                <RadioInput handleChange={handleChange} radioChecked={prodotto.disponibile}/>
+                <RadioInput handleChange={handleChange} 
+                            radioChecked={prodotto.disponibile} 
+                            prodotto={prodotto}
+                            quantita={quantita}
+                />
 
                 <input className="button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />
 
@@ -114,7 +148,7 @@ const FormModifica = () => {
                     </li>
                 </ul>
 
-                <ProductImage prodotto={prodotto}/>
+                <ProductImage prodotto={prodotto} />
 
             </form>
         </div>

@@ -20,6 +20,10 @@ app.use(cors());
 const middleware = require('./middleware');
 app.use(middleware());
 
+//funzione per rendere maiuscola la prima lettera della stringa ricevuta 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 app.get('/', (req,res)=>{
     res.redirect('/ferramenta/catalogo');
@@ -74,11 +78,12 @@ app.get('/ferramenta/catalogo/:codice', (req, res) => {
 app.post('/ferramenta/catalogo', (req, res) => {
 
     var newProduct = {
-        nome: req.body.nome,
+        nome: capitalizeFirstLetter(req.body.nome),
         prezzo: req.body.prezzo,
-        codice: req.body.codice,
+        codice: req.body.codice.toUpperCase(),
         urlImg: req.body.urlImg,
-        disponibile: req.body.disponibile
+        disponibile: req.body.disponibile,
+        quantita: req.body.quantita
     };
 
     prodotti.findOne({ codice: req.body.codice })
@@ -105,11 +110,12 @@ app.put('/ferramenta/catalogo/:codice', (req, res) => {
                 { codice: req.params.codice },
                 {
                     $set: {
-                        nome: req.body.nome,
+                        nome: capitalizeFirstLetter(req.body.nome),
                         prezzo: req.body.prezzo,
-                        codice: req.body.codice,
+                        codice: req.body.codice.toUpperCase(),
                         urlImg: req.body.urlImg,
-                        disponibile: req.body.disponibile
+                        disponibile: req.body.disponibile,
+                        quantita: req.body.quantita
                     }
                 });
             res.json(result);

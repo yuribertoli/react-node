@@ -6,6 +6,7 @@ const Form = () => {
 
   const navigate = useNavigate();
   const [prodotto, setProdotto] = useState({});
+  const [quantita, setQuantita] = useState(); //setto dinamicamente una classe
 
   //richiamo useEffect per avere il valore dell'input predefinito
   useEffect(() => {
@@ -16,6 +17,24 @@ const Form = () => {
     const name = event.target.name;
     const value = event.target.value;
     setProdotto(values => ({ ...values, [name]: value }));
+
+    createQuantity(event);
+  }
+
+  //se il prodotto non è disponibile tolgo la possibilità di aggiungere quantità
+  //al contrario se lo rendo disponibile, visualizzo le quantità da impostare
+  const createQuantity = (event) => {
+    if (event.target.name === 'disponibile') {
+      switch (parseInt(event.target.value)) {
+        case 0:
+          setQuantita('d-none');
+          break;
+        case 1:
+          setQuantita('d-block');
+          break;
+        default:
+      }
+    }
   }
 
   const handleSubmit = (event) => {
@@ -66,6 +85,8 @@ const Form = () => {
         <input
           type="number"
           name="prezzo"
+          min="0.00"  //non puo' essere negativo
+          step="0.05" //aggiunge 5 centesimi per click su freccia aumenta
           value={prodotto.prezzo || ""}
           onChange={handleChange}
           required
@@ -91,7 +112,11 @@ const Form = () => {
         />
       </label>
 
-      <RadioInput handleChange={handleChange} radioChecked={1}/>
+      <RadioInput handleChange={handleChange}
+        radioChecked={1}
+        prodotto={prodotto}
+        quantita={quantita}
+      />
 
       <input className="button radius success" value={"Crea Prodotto"} type="submit" />
 

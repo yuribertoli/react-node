@@ -18,8 +18,8 @@ function Elenco() {
             </div>
 
             <table className="container">
-                <thead>
-                    <tr>
+                <thead id='theadElenco'>
+                    <tr className='trElenco'>
                         <th>Nome</th>
                         <th>Prezzo (€)</th>
                         <th>Codice Prodotto</th>
@@ -33,20 +33,20 @@ function Elenco() {
                 <tbody>
 
                     {prodotti.map((prodotto) => (
-                        <tr key={prodotto.codice}>
+                        <tr className='trElenco' key={prodotto.codice}>
 
-                            <td>{prodotto.nome}</td>
+                            <td className="firstTD"><span>{prodotto.nome}</span></td>
                             <td>{prodotto.prezzo}</td>
                             <td>{prodotto.codice}</td>
                             <td><img id="imgElenco" src={parseInt(prodotto.disponibile) === 1? require('../img/accepted.png') : require('../img/refused.png') } alt="disponibilità" /></td>
                             <td>
-                                <Link className="button radius" to={`/ferramenta/catalogo/${prodotto.codice}`}>&#10047;</Link>
+                                <Link className="button-elenco button radius" to={`/ferramenta/catalogo/${prodotto.codice}`}>&#10047;</Link>
                             </td>
                             <td>
-                                <Link className="button radius warning" to={`/ferramenta/catalogo/modifica/${prodotto.codice}`}>&#9763;</Link>
+                                <Link className="button-elenco button radius warning" to={`/ferramenta/catalogo/modifica/${prodotto.codice}`}>&#9763;</Link>
                             </td>
                             <td>
-                                <Link className="button radius alert" to={`/ferramenta/catalogo/eliminazione/${prodotto.codice}`}>&#9760;</Link>
+                                <Link className="button-elenco button radius alert" to={`/ferramenta/catalogo/eliminazione/${prodotto.codice}`}>&#9760;</Link>
                             </td>
 
                         </tr>

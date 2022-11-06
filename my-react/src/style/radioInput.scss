@@ -67,3 +67,18 @@ $dimensioni: 30px;
         }
     }
 }
+
+.radioInputsQnty {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    min-height: 85px;
+
+    .quantityProduct{
+        text-align: end;
+
+        input {
+            width: 125px;
+        }
+    }
+}

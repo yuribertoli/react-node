@@ -11,6 +11,7 @@ const ProductDetails = () => {
         fetch(`http://127.0.0.1:8080/ferramenta/catalogo/${codice}`)
             .then(response => response.json())
             .then(json => setProdotto(json))
+            // eslint-disable-next-line
     }, [])
 
     return (
@@ -23,6 +24,7 @@ const ProductDetails = () => {
                             <th><span>Prezzo (€)</span></th>
                             <th><span>Codice Prodotto</span></th>
                             <th><span>Disponibilità</span></th>
+                            <th><span>Quantità</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +33,7 @@ const ProductDetails = () => {
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
                             <td><span>{parseInt(prodotto.disponibile) === 1? "Disponibile" : "Non disponibile"}</span></td>
+                            <td><span>{parseInt(prodotto.disponibile) === 1? prodotto.quantita : "Non disponibili"}</span></td>
                         </tr>
                     </tbody>
                 </table>
