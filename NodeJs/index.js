@@ -112,7 +112,6 @@ app.put('/ferramenta/catalogo/:codice', (req, res) => {
                     $set: {
                         nome: capitalizeFirstLetter(req.body.nome),
                         prezzo: req.body.prezzo,
-                        codice: req.body.codice.toUpperCase(),
                         urlImg: req.body.urlImg,
                         disponibile: req.body.disponibile,
                         quantita: req.body.quantita

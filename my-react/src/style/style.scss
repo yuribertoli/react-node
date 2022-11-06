@@ -1,6 +1,10 @@
 $widthTable: 500px;
 $percentageHeadTable: 40%;
 
+body{
+    overflow-y: scroll;
+}
+
 footer{
     height: 100px;
 }
@@ -18,12 +22,28 @@ footer{
     display: block;
 }
 
-.button {
-    margin: 5px 0;
+#titleElenco{
+    display: flex;
+    justify-content: space-between;
+
+    #createPerson {
+        margin: 10px 0 20px;
+        height: 41px;
+    }
+
+    label{
+        text-align: end;
+    }
+    
+    input{
+        min-width: 280px;
+        text-align: end;
+        text-transform: uppercase;
+    }
 }
 
-#createPerson {
-    margin: 10px 0 20px;
+.button {
+    margin: 5px 0;
 }
 
 nav ul li {
@@ -119,6 +139,9 @@ input {
 
     .firstTD {
         text-align: left;
+        width: 190px;
+        height: 68px;
+        overflow-x: visible;
         
         span {
             position: relative;

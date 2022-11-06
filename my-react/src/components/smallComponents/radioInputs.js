@@ -37,7 +37,7 @@ function RadioInput({handleChange, radioChecked, prodotto, quantita}) {
                     min="1"  
                     value={prodotto.quantita || ""}
                     onChange={handleChange}
-                    required
+                    /* {parseInt(prodotto.disponibile) === 0? required : ""} */
                     />
                 </label>
             </div>
