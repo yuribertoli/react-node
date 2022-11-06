@@ -5,19 +5,18 @@ import RadioInput from './smallComponents/radioInputs';
 const Form = () => {
 
   const navigate = useNavigate();
-
   const [prodotto, setProdotto] = useState({});
+
+  //richiamo useEffect per avere il valore dell'input predefinito
+  useEffect(() => {
+    setProdotto(values => ({ ...values, disponibile: 1 }));
+  }, [])
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setProdotto(values => ({ ...values, [name]: value }));
   }
-
-  //richiamo useEffect per avere il valore dell'input predefinito
-  useEffect(() => {
-    setProdotto(values => ({ ...values, disponibile: 1 }));
-  }, [])
 
   const handleSubmit = (event) => {
 
@@ -92,7 +91,7 @@ const Form = () => {
         />
       </label>
 
-      <RadioInput handleChange={handleChange}/>
+      <RadioInput handleChange={handleChange} radioChecked={1}/>
 
       <input className="button radius success" value={"Crea Prodotto"} type="submit" />
 

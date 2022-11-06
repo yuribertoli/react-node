@@ -29,7 +29,7 @@ const ProductDetails = () => {
                             <td><span>{prodotto.nome}</span></td>
                             <td><span>{prodotto.prezzo}</span></td>
                             <td><span>{prodotto.codice}</span></td>
-                            <td><span>{prodotto.disponibile}</span></td>
+                            <td><span>{parseInt(prodotto.disponibile) === 1? "Disponibile" : "Non disponibile"}</span></td>
                         </tr>
                     </tbody>
                 </table>

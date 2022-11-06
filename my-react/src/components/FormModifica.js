@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from "react-router-dom";
+import RadioInput from './smallComponents/radioInputs';
 
-function FormModifica() {
+const FormModifica = () => {
 
     const [prodotto, setProdotto] = useState({});
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ function FormModifica() {
     useEffect(() => {
         fetch(`http://127.0.0.1:8080/ferramenta/catalogo/${codice}`)
             .then(response => response.json())
-            .then(json => setProdotto(json))
+            .then(json => {setProdotto(json)})
     }, [])
 
     const handleChange = (event) => {
@@ -53,6 +54,11 @@ function FormModifica() {
 
     }
 
+    //aspetto che arrivi il dato per renderizzare la pagina
+    if (prodotto.disponibile === undefined) {
+        return <>In caricamento...</>;
+    }
+
     return (
         <div>
             <form id='formModifica' onSubmit={handleSubmit}>
@@ -85,6 +91,8 @@ function FormModifica() {
                         onChange={handleChange}
                     />
                 </label>
+
+                <RadioInput handleChange={handleChange} radioChecked={prodotto.disponibile}/>
 
                 <input className="button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />
 
