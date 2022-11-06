@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from "react-router-dom";
+import ProductImage from './smallComponents/productImage';
 
 const ProductDetails = () => {
 
@@ -33,7 +34,9 @@ const ProductDetails = () => {
                         </tr>
                     </tbody>
                 </table>
-                <div className='imgTable'><img src={prodotto.urlImg} alt={prodotto.nome} /></div>
+
+                <ProductImage prodotto={prodotto}/>
+
             </div>
 
             <ul className="no-bullet grid-x">

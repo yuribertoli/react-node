@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from "react-router-dom";
+import ProductImage from './smallComponents/productImage';
 
 function Eliminazione() {
 
@@ -49,7 +50,7 @@ function Eliminazione() {
     }
 
     return (
-        <div>
+        <div id='formElimina'>
             <div className="verticalTable">
                 <table>
                     <thead>
@@ -87,6 +88,8 @@ function Eliminazione() {
                     </Link>
                 </li>
             </ul>
+
+            <ProductImage prodotto={prodotto}/>
 
         </div>
     )

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from "react-router-dom";
 import RadioInput from './smallComponents/radioInputs';
+import ProductImage from './smallComponents/productImage';
 
 const FormModifica = () => {
 
@@ -113,7 +114,7 @@ const FormModifica = () => {
                     </li>
                 </ul>
 
-                <div className='imgTable'><img src={prodotto.urlImg} alt={prodotto.nome} /></div>
+                <ProductImage prodotto={prodotto}/>
 
             </form>
         </div>

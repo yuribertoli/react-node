@@ -72,7 +72,7 @@ input {
     }
 }
 
-#formModifica{
+#formModifica,#formElimina{
     position: relative;
 }
 
@@ -88,5 +88,7 @@ input {
         max-width: 400px;
         height: auto;
         max-height: 400px;
+        min-width: 100px;
+        min-height: 30px;
     }
 }
