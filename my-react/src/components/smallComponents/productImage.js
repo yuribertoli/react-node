@@ -1,5 +1,6 @@
 function ProductImage({ prodotto }) {
 
+    //se non c'è un immagine caricata mostro quella di default 
     if (prodotto.urlImg !== ""){
         return (
             <div className='imgTable'>
@@ -10,7 +11,7 @@ function ProductImage({ prodotto }) {
         return (
             <div className='imgTable'>
                 <img src={require("../../img/logo192.png")} alt={prodotto.nome} />
-                <p>Immagine non disponibile</p>
+                <p>Immagine non presente</p>
             </div>
         )
     }

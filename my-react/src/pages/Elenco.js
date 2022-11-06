@@ -5,7 +5,7 @@ function Elenco() {
 
     const [prodotti, setProdotti] = useState([]);
 
-    useEffect(()=>{
+    useEffect(()=>{ //richiamo la versione del catalogo con solo alcuni dati
         fetch('http://127.0.0.1:8080/ferramenta/catalogo-min')
         .then(response => response.json())
         .then(json => setProdotti(json))
@@ -23,6 +23,7 @@ function Elenco() {
                         <th>Nome</th>
                         <th>Prezzo (€)</th>
                         <th>Codice Prodotto</th>
+                        <th>Disponibilità</th>
                         <th>Dettagli</th>
                         <th>Modifica</th>
                         <th>Elimina</th>
@@ -37,6 +38,7 @@ function Elenco() {
                             <td>{prodotto.nome}</td>
                             <td>{prodotto.prezzo}</td>
                             <td>{prodotto.codice}</td>
+                            <td><img id="imgElenco" src={parseInt(prodotto.disponibile) === 1? require('../img/accepted.png') : require('../img/refused.png') } alt="disponibilità" /></td>
                             <td>
                                 <Link className="button radius" to={`/ferramenta/catalogo/${prodotto.codice}`}>&#10047;</Link>
                             </td>
