@@ -6,7 +6,7 @@ import ProductImage from './smallComponents/productImage';
 const FormModifica = () => {
 
     const [prodotto, setProdotto] = useState({});
-    const [quantita, setQuantita] = useState(); //setto dinamicamente una classe
+    const [classe, setClasse] = useState(); //setto dinamicamente una classe
 
     const navigate = useNavigate();
     const { codice } = useParams();
@@ -19,7 +19,7 @@ const FormModifica = () => {
             .then(json => { 
                 setProdotto(json); 
                 if(parseInt(json.disponibile) === 0){
-                    setQuantita('d-none')
+                    setClasse('d-none')
                 }
             })
         // eslint-disable-next-line
@@ -39,10 +39,10 @@ const FormModifica = () => {
         if (event.target.name === 'disponibile') {
             switch (parseInt(event.target.value)) {
                 case 0:
-                    setQuantita('d-none');
+                    setClasse('d-none');
                     break;
                 case 1:
-                    setQuantita('d-block');
+                    setClasse('d-block');
                     break;
                 default:
             }
@@ -126,7 +126,7 @@ const FormModifica = () => {
                 <RadioInput handleChange={handleChange} 
                             radioChecked={prodotto.disponibile} 
                             prodotto={prodotto}
-                            quantita={quantita}
+                            classe={classe}
                 />
 
                 <input className="linkTag button radius warning" value={`${hazardUnicode} Modifica ${prodotto.nome}`} type="submit" />

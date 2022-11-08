@@ -177,3 +177,15 @@ Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 11:06:2
 Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 11:07:31
 Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 11:08:01
 Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 8/11/2022, Ora: 11:08:43
+Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 8/11/2022, Ora: 19:09:18
+Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 8/11/2022, Ora: 19:09:28
+Metodo: GET 		 Url: /ferramenta/catalogo/FAL569 		 Data: 8/11/2022, Ora: 19:09:29
+Metodo: GET 		 Url: /ferramenta/catalogo-min 		 Data: 8/11/2022, Ora: 19:09:32
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:09:33
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:11:25
+Metodo: PUT 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:11:31
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:11:32
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:11:34
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:11:57
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:12:40
+Metodo: GET 		 Url: /ferramenta/catalogo/MAR565 		 Data: 8/11/2022, Ora: 19:12:55
