@@ -1,6 +1,6 @@
 import '../../style/radioInput.scss';
 
-function RadioInput({handleChange, radioChecked, prodotto, quantita}) {
+function RadioInput({handleChange, radioChecked, prodotto, classe}) {
 
     return (
         <div className='radioInputsQnty'>
@@ -29,15 +29,15 @@ function RadioInput({handleChange, radioChecked, prodotto, quantita}) {
                     </div>
                 </div>
             </div>
-            <div className={`quantityProduct ${quantita}`}>
+            <div className={`quantityProduct ${classe}`}>
                 <label>Quantità disponibili:
                     <input
                     type="number"
                     name="quantita"
                     min="1"  
                     value={prodotto.quantita || ""}
+                    required = {classe === 'd-none'? false : true} //rendo richiesto il campo solo se il prodotto viene messo come disponibile
                     onChange={handleChange}
-                    /* {parseInt(prodotto.disponibile) === 0? required : ""} */
                     />
                 </label>
             </div>

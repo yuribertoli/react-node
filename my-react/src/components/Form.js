@@ -6,7 +6,7 @@ const Form = () => {
 
   const navigate = useNavigate();
   const [prodotto, setProdotto] = useState({});
-  const [quantita, setQuantita] = useState(); //setto dinamicamente una classe
+  const [classe, setClasse] = useState(); //setto dinamicamente una classe
 
   //richiamo useEffect per avere il valore dell'input predefinito
   useEffect(() => {
@@ -27,10 +27,10 @@ const Form = () => {
     if (event.target.name === 'disponibile') {
       switch (parseInt(event.target.value)) {
         case 0:
-          setQuantita('d-none');
+          setClasse('d-none');
           break;
         case 1:
-          setQuantita('d-block');
+          setClasse('d-block');
           break;
         default:
       }
@@ -115,8 +115,14 @@ const Form = () => {
       <RadioInput handleChange={handleChange}
         radioChecked={1}
         prodotto={prodotto}
-        quantita={quantita}
+        classe={classe}
       />
+
+      {/* <select value={"seleziona un opzione"}>
+        <option value="A">Apple</option>
+        <option value="B">Banana</option>
+        <option value="C">Cranberry</option>
+      </select> */}
 
       <input className="button radius success" value={"Crea Prodotto"} type="submit" />
 
