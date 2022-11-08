@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ProductImage from './smallComponents/productImage';
+import DetailsButton from './smallComponents/buttons/dettagli';
+import ModifyButton from './smallComponents/buttons/modifica';
 
 function Eliminazione() {
 
@@ -75,18 +77,10 @@ function Eliminazione() {
 
             <ul className="no-bullet grid-x margin-top-1">
                 <li>
-                    <Link
-                        className="linkTag button radius margin-right-1"
-                        to={`/ferramenta/catalogo/${prodotto.codice}`}>
-                        &#10047; Dettagli
-                    </Link>
+                    <DetailsButton prodotto={prodotto}/>
                 </li>
                 <li>
-                    <Link
-                        className="linkTag button radius warning"
-                        to={`/ferramenta/catalogo/modifica/${prodotto.codice}`}>
-                        &#9763; Modifica
-                    </Link>
+                    <ModifyButton prodotto={prodotto}/>
                 </li>
             </ul>
 

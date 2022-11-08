@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import RadioInput from './smallComponents/radioInputs';
 import ProductImage from './smallComponents/productImage';
+import DetailsButton from './smallComponents/buttons/dettagli';
+import DeleteButton from './smallComponents/buttons/elimina';
 
 const FormModifica = () => {
 
@@ -133,18 +135,10 @@ const FormModifica = () => {
 
                 <ul className="no-bullet grid-x margin-top-1">
                     <li>
-                        <Link
-                            className="linkTag button radius margin-right-1"
-                            to={`/ferramenta/catalogo/${prodotto.codice}`}>
-                            &#10047; Dettagli
-                        </Link>
+                        <DetailsButton prodotto={prodotto}/>
                     </li>
                     <li>
-                        <Link
-                            className="linkTag button radius alert"
-                            to={`/ferramenta/catalogo/eliminazione/${prodotto.codice}`}>
-                            &#9760; Elimina
-                        </Link>
+                        <DeleteButton prodotto={prodotto}/>
                     </li>
                 </ul>
 
