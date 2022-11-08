@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import RadioInput from './smallComponents/radioInputs';
+import SelectOptions from "./smallComponents/selectOptions";
 
 const Form = () => {
 
@@ -118,11 +119,7 @@ const Form = () => {
         classe={classe}
       />
 
-      {/* <select value={"seleziona un opzione"}>
-        <option value="A">Apple</option>
-        <option value="B">Banana</option>
-        <option value="C">Cranberry</option>
-      </select> */}
+      <SelectOptions/>
 
       <input className="button radius success" value={"Crea Prodotto"} type="submit" />
 
